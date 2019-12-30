@@ -10,21 +10,45 @@ html,body{
 }
 
 #input{
+    display: block;
     width:100%;
     height: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#run
+{
+    width:100%;
+    display: block;
 }
 
 #output{
     background-color: white;
     border: 1px solid #dadada;
-    margin-top: 2em;
     padding: 5px;
     white-space: pre; /* show line breaks */
 }
 
 ul{
     list-style-type: none;
+    padding: 0;
 }
-li{
+
+.message{
     margin-bottom: 1em;
+    overflow: hidden;
 }
+
+.message .date{
+    font-size: 10px;
+    color: #ccc;
+    display: block;
+    float: left;
+    width: 50px;
+}
+
+.message .body{
+    display: block;
+    float: left;
+}
+
