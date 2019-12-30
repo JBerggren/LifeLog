@@ -1,0 +1,30 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    padding: 0;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#input{
+    width:100%;
+    height: 100px;
+}
+
+#output{
+    background-color: white;
+    border: 1px solid #dadada;
+    margin-top: 2em;
+    padding: 5px;
+    white-space: pre; /* show line breaks */
+}
+
+ul{
+    list-style-type: none;
+}
+li{
+    margin-bottom: 1em;
+}
