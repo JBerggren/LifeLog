@@ -1,0 +1,2 @@
+Make MessageController use MessageService (MongoDB)
+Add docker things and deploy to Google Cloud

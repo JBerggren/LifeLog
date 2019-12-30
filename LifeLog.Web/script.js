@@ -1,4 +1,4 @@
-var apiUrl = "http://localhost:5000/chat";
+var apiUrl = "http://localhost:5000/message";
 
 var input = document.getElementById("input");
 var output = document.getElementById("output");

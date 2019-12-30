@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using LifeLog.Api.Models;
 
 namespace LifeLog.Api.Controllers
 {
@@ -34,39 +35,7 @@ namespace LifeLog.Api.Controllers
             return new QueryResponse(results.ToArray());
         }
     }
-    public class StoreRequest
-    {
-        public string Message { get; set; }
-    }
-    public class GetResponse
-    {
-        public GetResponse(Message[] messages){
-            Messages = messages;
-        }
-        public Message[] Messages { get; set; }
-    }
+   
 
-    public class QueryRequest
-    {
-        public string Query { get; set; }
-    }
-    public class QueryResponse
-    {
-        public QueryResponse(Message[] messages){
-            Messages = messages;
-        }
-        public Message[] Messages { get; set; }
-    }
-
-    public class Message
-    {
-        public Message(string body)
-        {
-            Body = body;
-            Created = DateTime.Now;
-        }
-        public string Id {get;set;}
-        public string Body { get; set; }
-        public DateTime Created {get;set;}
-    }
+    
 }
