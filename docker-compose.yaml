@@ -9,9 +9,9 @@ services:
     #environment:
     # MONGO_INITDB_ROOT_USERNAME: todoadmin
     # MONGO_INITDB_ROOT_PASSWORD: getthingsdone
-  web:
+  api:
       build: ./LifeLog.Api/
-      image: lifelog:dev
+      image: lifelog.api:dev
      # depends_on:
      # - mongo
      # links:
@@ -21,3 +21,8 @@ services:
       environment:
         ASPNETCORE_ENVIRONMENT: Development
         ASPNETCORE_URLS: "http://*:80"
+  web:
+    build: ./LifeLog.Web/
+    image: lifelog.web:dev
+    ports:
+    - 8081:80

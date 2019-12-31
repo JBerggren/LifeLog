@@ -51,12 +51,13 @@ namespace LifeLog.Api
             app.UseCors("CorsPolicy");
             //app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
+            app.UseRouting();
             app.UseAuthorization();
 
             app.UseSwagger();
-
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
