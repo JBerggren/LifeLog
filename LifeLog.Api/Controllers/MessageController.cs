@@ -8,7 +8,7 @@ namespace LifeLog.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ChatController : ControllerBase
+    public class MessageController : ControllerBase
     {
         public static List<Message> Messages = new List<Message>();
 
