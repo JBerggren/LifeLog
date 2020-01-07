@@ -3,10 +3,11 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace LifeLog.Api.Models
 {
-    public class Message
+    public class Event
     {
-        public Message(string body)
+        public Event(EventType type, string body)
         {
+            Type = type;
             Body = body;
             Created = DateTime.Now;
         }
@@ -15,7 +16,14 @@ namespace LifeLog.Api.Models
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id {get;set;}
         public string Body { get; set; }
+        public EventType Type { get; set; }
         public DateTime Created {get;set;}
     }
     
+    public enum EventType{
+        Log,
+        PhoneCall,
+        SMS,
+        Location
+    }
 }

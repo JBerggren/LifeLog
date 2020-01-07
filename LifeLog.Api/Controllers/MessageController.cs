@@ -10,28 +10,28 @@ namespace LifeLog.Api.Controllers
     [Route("[controller]")]
     public class MessageController : ControllerBase
     {
-        public static List<Message> Messages = new List<Message>();
+        public static List<Event> Events = new List<Event>();
 
         [HttpPost]
-        public Message Store(StoreRequest request)
+        public MessageViewModel Store(StoreRequest request)
         {
-            var msg = new Message(request.Message);
-            Messages.Insert(0,msg);
-            return msg;
+            var msg = new Event(EventType.Log, request.Message);
+            Events.Insert(0,msg);
+            return new MessageViewModel(msg);
         }
 
         [HttpGet]
         [Route("today")]
         public GetResponse Get()
         {
-            return new GetResponse(Messages.ToArray());
+            return new GetResponse(Events.ToArray());
         }
 
         [HttpPost]
         [Route("query")]
         public QueryResponse Query(QueryRequest request)
         {
-            var results = Messages.Where(x=>x.Body.Contains(request.Query));
+            var results = Events.Where(x=>x.Body.Contains(request.Query));
             return new QueryResponse(results.ToArray());
         }
     }
